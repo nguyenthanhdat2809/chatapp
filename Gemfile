@@ -18,6 +18,10 @@ gem "net-smtp"
 gem "net-imap"
 gem "uri", "0.10.0"
 
+gem "activeadmin"
+gem "devise"
+gem "cancancan"
+
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "rspec-rails", "~> 4.0.0"
