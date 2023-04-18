@@ -20,6 +20,7 @@ ul {
 }
 
 .messages-list {
+  padding-left: 21px;
   max-height: 200px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -28,8 +29,6 @@ ul {
  
 .message-sent {
   position: relative;
-  background-color: #D9EDF7;
-  border-color: #BCE8F1;
   margin: 5px 20px;
   padding: 10px;
   float: right;
@@ -37,7 +36,6 @@ ul {
  
  
 .message-received {
-  background-color: #F1F0F0;
   border-color: #EEEEEE;
   margin: 5px 20px;
   padding: 10px;
@@ -46,4 +44,10 @@ ul {
 
 .user-list-header {
   background-color: #a8b5d3;
+}
+
+.user-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

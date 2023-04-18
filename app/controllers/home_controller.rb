@@ -2,9 +2,8 @@ class HomeController < ApplicationController
 	before_action :authenticate_user!
 	
 	def index
-		session[:conversations] ||= []
-
+		session[:conversation] ||= nil
 		@users = User.all.where.not(id: current_user.id)
-		@conversations = Conversation.includes(:recipient, :messages).find(session[:conversations])
+		@conversation = Conversation.includes(:recipient, :messages).find_by(id: session[:conversation])
 	end
 end
