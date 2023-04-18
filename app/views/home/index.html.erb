@@ -1,5 +1,7 @@
+<div id="room-id" data-room-id="<%= @conversation.try(:id) %>"></div>
 <div class="container">
 	<h1>Home page</h1>
+	<h2>Welcome, <%= current_user.email %></h2>
 
 	<div>
 		<%= link_to "logout", destroy_user_session_path, method: :delete %>
@@ -7,11 +9,11 @@
 
 	<div class="row mt-2">
 		<div class="col-md-9">
-	    <ul id="conversations-list">
-	      <% @conversations.each do |conversation| %>
-	        <%= render 'conversations/conversation', conversation: conversation, user: current_user %>
-	      <% end %>
-	    </ul>
+		    <ul id="conversations-list">
+		    	<% if @conversation.present? %>
+		    		<%= render 'conversations/conversation', conversation: @conversation, user: current_user %>
+		    	<% end %>
+		    </ul>
 	  </div>
 
 		<div class="col-md-3">
