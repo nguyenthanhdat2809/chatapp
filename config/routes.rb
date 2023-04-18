@@ -6,4 +6,11 @@ Rails.application.routes.draw do
   }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
+  resources :conversations, only: [:create] do
+    resources :messages, only: [:create]
+    member do
+      post :close
+    end
+  end
 end

@@ -12,7 +12,3 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
-$(document).ready(function(){
-	console.log("Running...")
-});
